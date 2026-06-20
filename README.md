@@ -1,127 +1,166 @@
 # Sales_Analytics_DataModel.xlsx
-End-to-end Sales Data Cleaning and Data Modeling project using Excel, Power Query, and Power Pivot. Includes data transformation, standardization, calculated metrics, calendar table creation, and star schema modeling.
-📊 Sales Data Cleaning & Data Modeling Project
-📌 Project Overview
 
-This project focuses on cleaning, transforming, and modeling raw sales data using Microsoft Excel, Power Query, and Power Pivot. The dataset contained inconsistent values, duplicate records, formatting issues, and missing data. The objective was to prepare an analytics-ready dataset and build a structured data model for reporting and dashboard creation.
+## 📌 Project Overview
 
-🎯 Objectives
-Clean and standardize raw sales data
-Remove duplicates and invalid records
-Convert data into proper formats
-Create calculated business metrics
-Build dimension tables
-Create a Calendar table
-Establish relationships using a star schema data model
-🛠️ Tools Used
-Microsoft Excel
-Power Query
-Power Pivot
-Data Model
-🔄 Data Cleaning Process
-1. Header Preparation
-Promoted first row as headers
-Verified column names
-2. Text Cleaning
-Applied Trim and Clean functions
-Removed extra spaces and hidden characters
-3. Data Standardization
+This project demonstrates an end-to-end data cleaning and data modeling workflow using Microsoft Excel, Power Query, and Power Pivot.
 
-Standardized inconsistent values such as:
+The raw sales dataset contained duplicate records, inconsistent text values, invalid dates, formatting issues, and missing values. Using Power Query, the data was cleaned, standardized, and transformed into an analytics-ready dataset. A star schema data model was then built using Power Pivot for reporting and dashboard creation.
 
-Raw Value	Standard Value
-electronics	Electronics
-ELECTRONICS	Electronics
-delivered	Delivered
-DELIVERED	Delivered
-4. Duplicate Removal
-Removed duplicate records using Order ID
-5. Data Type Conversion
-Column	Data Type
-Order Date	Date
-Quantity	Whole Number
-Unit Price	Decimal Number
-Discount	Decimal Number
-Shipping Fee	Decimal Number
-6. Error Handling
-Removed invalid rows
-Fixed date and numeric conversion issues
-7. Mobile Number Formatting
-Added country code (+91) to customer phone numbers
-📈 Calculated Columns Created
-Gross Sales
-Quantity × Unit Price
-Discount Amount
-Gross Sales × Discount
-Net Sales
-Gross Sales − Discount Amount
-Final Sales
-Net Sales + Shipping Fee
-📅 Time Intelligence Columns
-Month
-Jan-2026
-Feb-2026
-Mar-2026
+---
 
-Created using Order Date.
+## 🛠 Tools & Technologies
 
-Quarter
-Q1-2026
-Q2-2026
-Q3-2026
+- Microsoft Excel
+- Power Query
+- Power Pivot
+- Data Model
+- Data Cleaning
+- Data Transformation
+- Data Modeling
 
-Created using Order Date.
+---
 
-🏗️ Data Modeling
-Product Master Table
+## 🔄 Data Cleaning Steps
 
-Created a Product Dimension table using:
+### Data Preparation
+- Promoted first row as headers
+- Removed unnecessary columns
+- Trimmed extra spaces
+- Cleaned hidden characters
 
-Product
-Category
+### Data Standardization
+- Standardized Category values
+- Standardized Order Status values
+- Standardized Payment Mode values
+- Standardized State names
+
+### Data Validation
+- Removed duplicate records
+- Removed blank rows
+- Removed error rows
+- Fixed invalid date formats
+
+### Data Transformation
+- Converted Order Date to Date type
+- Converted Quantity to Whole Number
+- Converted Unit Price to Decimal
+- Converted Discount to Decimal
+- Converted Shipping Fee to Decimal
+- Added +91 country code to mobile numbers
+
+---
+
+## 📈 Calculated Columns
+
+### Gross Sales
+
+```text
+Gross Sales = Quantity × Unit Price
+```
+
+### Discount Amount
+
+```text
+Discount Amount = Gross Sales × Discount
+```
+
+### Net Sales
+
+```text
+Net Sales = Gross Sales − Discount Amount
+```
+
+### Final Sales
+
+```text
+Final Sales = Net Sales + Shipping Fee
+```
+
+---
+
+## 📅 Time Intelligence
+
+Created the following columns from Order Date:
+
+- Month (Jan-2026)
+- Quarter (Q1-2026)
+- Year
+
+---
+
+## 🏗 Data Model
+
+### Product Dimension
+
+Created Product Master table using:
+
+- Product
+- Category
 
 Removed duplicate records to maintain unique products.
 
-Calendar Table
+### Calendar Dimension
 
-Created a Date Dimension table based on the valid Order Date range.
+Created Calendar Table using valid Order Date range.
 
 Included:
 
-Date
-Year
-Month
-Quarter
-Relationships
-DimCalendar
-     |
-     |
-FactSales
-     |
-     |
-DimProduct
+- Date
+- Month
+- Quarter
+- Year
 
-Implemented a Star Schema model using Power Pivot.
+---
 
-📊 Key Learning Outcomes
-Data Cleaning using Power Query
-Data Transformation Techniques
-Handling Missing and Duplicate Data
-Data Standardization
-Data Modeling using Power Pivot
-Creating Dimension Tables
-Building Star Schema Relationships
-Preparing Data for BI Reporting
-🚀 Future Scope
-Create interactive Excel Dashboard
-Build Power BI Dashboard
-Add KPI Cards and Visualizations
-Perform Sales Trend Analysis
-Develop Business Performance Reports
-👨‍💻 Author
+## ⭐ Star Schema
 
-Ravi Kumar
+```text
+                DimCalendar
+                     |
+                     |
+                     |
+DimProduct ------ FactSales
+```
 
-BCA Student | Data Analytics Enthusiast
+### Relationships
 
-Skills: Excel, Power Query, Power Pivot, SQL, Power BI, Python
+```text
+DimCalendar[Date]
+        |
+        |
+FactSales[OrderDate]
+
+DimProduct[Product]
+        |
+        |
+FactSales[Product]
+## 🎯 Key Skills Demonstrated
+
+- Data Cleaning
+- Data Transformation
+- Power Query
+- Power Pivot
+- Data Modeling
+- Star Schema Design
+- Data Validation
+- Excel Analytics
+
+---
+
+## 🚀 Future Improvements
+
+- Build Interactive Dashboard
+- Power BI Integration
+- KPI Tracking
+- Sales Trend Analysis
+- Customer Insights Dashboard
+
+---
+
+## 👨‍💻 Author
+
+**Ravi Kumar**
+
+BCA Student | Aspiring Data Analyst
+
+Skills: Excel • SQL • Power BI • Python • Power Query • Power Pivot
